@@ -210,7 +210,6 @@ body {
 }
 
 @keyframes float {
-
     0%,
     100% {
         transform: translateY(0);
@@ -223,7 +222,6 @@ body {
 }
 
 @keyframes bubble-bounce {
-
     0%,
     100% {
         transform: translateY(0) scale(1);
@@ -236,7 +234,6 @@ body {
 }
 
 @keyframes blink {
-
     0%,
     48%,
     52%,
@@ -250,7 +247,6 @@ body {
 }
 
 @keyframes twinkle {
-
     0%,
     100% {
         opacity: 0.4;
@@ -264,7 +260,6 @@ body {
 }
 
 @keyframes wave-left-arm {
-
     0%,
     100% {
         transform: rotate(-35deg);
@@ -276,7 +271,6 @@ body {
 }
 
 @keyframes wave-right-arm {
-
     0%,
     100% {
         transform: rotate(35deg);
@@ -285,4 +279,5 @@ body {
     50% {
         transform: rotate(45deg);
     }
+
 }
