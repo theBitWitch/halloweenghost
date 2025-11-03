@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kawaii Halloween Geist</title>
+    <link rel="stylesheet" href="ghost.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="speech-bubble">
+            <p class="message" id="message"></p>
+        </div>
+        <div class="ghost">
+            <div class="ghost-body">
+                <div class="arm left-arm"></div>
+                <div class="arm right-arm"></div>
+                <div class="eyes">
+                    <div class="eye left-eye">
+                        <div class="eyelid"></div>
+                    </div>
+                    <div class="eye right-eye">
+                        <div class="eyelid"></div>
+                    </div>
+                </div>
+                <div class="mouth"></div>
+                <div class="cheeks">
+                    <div class="cheek left-cheek"></div>
+                    <div class="cheek right-cheek"></div>
+                </div>
+            </div>
+
+            <!-- svg geist unten -->
+            <svg class="ghost-tail" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M 0,0 L 0,20 Q 17,40 33,20 Q 50,0 67,20 Q 83,40 100,20 Q 117,0 133,20 Q 150,40 167,20 Q 183,0 200,20 L 200,0 Z"
+                    fill="white">
+                    <animate attributeName="d" dur="8s" repeatCount="indefinite" calcMode="spline"
+                        keySplines="0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1; 0.45 0 0.55 1"
+                        values="M 0,0 L 0,20 Q 17,40 33,20 Q 50,0 67,20 Q 83,40 100,20 Q 117,0 133,20 Q 150,40 167,20 Q 183,0 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 15,37 31,20 Q 48,3 65,20 Q 81,37 98,20 Q 115,3 131,20 Q 148,37 165,20 Q 181,3 198,20 Q 190,10 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 13,34 29,20 Q 46,6 63,20 Q 79,34 96,20 Q 113,6 129,20 Q 146,34 163,20 Q 179,6 196,20 Q 188,12 200,20 L 200,0 Z;
+                                M 0,0 L 0,21 Q 11,30 27,20 Q 44,10 61,20 Q 77,30 94,20 Q 111,10 127,20 Q 144,30 161,20 Q 177,10 194,20 Q 186,15 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 13,34 29,20 Q 46,6 63,20 Q 79,34 96,20 Q 113,6 129,20 Q 146,34 163,20 Q 179,6 196,20 Q 188,12 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 15,37 31,20 Q 48,3 65,20 Q 81,37 98,20 Q 115,3 131,20 Q 148,37 165,20 Q 181,3 198,20 Q 190,10 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 16,38 32,20 Q 49,2 66,20 Q 82,38 99,20 Q 116,2 132,20 Q 149,38 166,20 Q 182,2 199,20 Q 191,9 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 16.5,39 32.5,20 Q 49.5,1 66.5,20 Q 82.5,39 99.5,20 Q 116.5,1 132.5,20 Q 149.5,39 166.5,20 Q 182.5,1 199.5,20 Q 191.5,8.5 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 17,39.5 33,20 Q 50,0.5 67,20 Q 83,39.5 100,20 Q 117,0.5 133,20 Q 150,39.5 167,20 Q 183,0.5 200,20 Q 191,8 200,20 L 200,0 Z;
+                                M 0,0 L 0,20 Q 17,40 33,20 Q 50,0 67,20 Q 83,40 100,20 Q 117,0 133,20 Q 150,40 167,20 Q 183,0 200,20 L 200,0 Z" />
+                </path>
+            </svg>
+        </div>
+    </div>
+
+    <div class="star star-1">✦</div>
+    <div class="star star-2">✦</div>
+    <div class="star star-3">✦</div>
+    <div class="star star-4">✦</div>
+    <div class="star star-5">✦</div>
+    <div class="star star-6">✦</div>
+
+    <script>
+        //danke chatty für die messages
+        const messages = [
+            "Boo! 👻",
+            "Süßes oder Saures! 🍬",
+            "Ich bin gruuuselig! 😈",
+            "Happy Halloween! 🎃",
+            "Huuuuuu! 👻",
+            "Keine Angst! 💜",
+            "Trick or Treat! 🍭",
+            "Ich liebe Kürbisse! 🎃",
+            "Geisterstunde! 🌙",
+            "Magische Nacht! ✨",
+            "Bleib bei mir! 👻💕",
+            "Spuktakulär! 🦇",
+            "Hexerei! 🧙‍♀️",
+            "Vollmond! 🌕",
+            "Knochenstarke Grüße! 💀",
+            "Süße Träume! 🍫",
+            "Gespenstisch gut! 👻",
+            "Fledermauszeit! 🦇",
+            "Zauberhaft! ✨",
+            "Kürbiszeit! 🎃",
+            "Meow! 🐱‍👤",
+            "Gruselige Umarmung! 🤗",
+            "Geisterparty! 🎉",
+            "Schaurig schön! 💜",
+            "Mondscheinzauber! 🌙",
+            "Bonbon-Alarm! 🍬",
+            "Spinnennetz-Liebe! 🕸️",
+            "Nachtaktiv! 🦉",
+            "Verzaubert! 🔮",
+            "Gänsehaut! 😱",
+            "Süßer Spuk! 🍭👻"
+        ];
+
+        let currentIndex = Math.floor(Math.random() * messages.length);
+        const messageElement = document.getElementById('message');
+
+        messageElement.textContent = messages[currentIndex];
+
+        setInterval(() => {
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * messages.length);
+            } while (newIndex === currentIndex);
+            currentIndex = newIndex;
+            messageElement.textContent = messages[currentIndex];
+        }, 3000);
+    </script>
+</body>
+
+
+</html>

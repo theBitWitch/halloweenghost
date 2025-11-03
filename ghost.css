@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #b08fc4 0%, #7242a3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Patrick Hand', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+}
+
+.speech-bubble {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    animation: bubble-bounce 3s ease-in-out infinite;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid white;
+}
+
+.message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #764ba2;
+    text-align: center;
+}
+
+.ghost {
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.3));
+}
+
+.ghost-body {
+    width: 200px;
+    height: 240px;
+    background: white;
+    border-radius: 100px 100px 0 0;
+    /* Oben abgerundet */
+    position: relative;
+}
+
+.arm {
+    position: absolute;
+    width: 60px;
+    height: 90px;
+    background: white;
+    border-radius: 30px 30px 0 0;
+    top: 70px;
+}
+
+.left-arm {
+    left: -5px;
+    transform-origin: right bottom;
+    animation: wave-left-arm 2s ease-in-out infinite;
+}
+
+.right-arm {
+    right: -5px;
+    transform-origin: left bottom;
+    animation: wave-right-arm 2s ease-in-out infinite;
+}
+
+.eyes {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.eye {
+    width: 18px;
+    height: 18px;
+    background: #333;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.eyelid {
+    width: 100%;
+    height: 0%;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: blink 3s ease-in-out infinite;
+}
+
+.mouth {
+    position: absolute;
+    width: 35px;
+    height: 18px;
+    border: 3px solid #333;
+    border-top: none;
+    border-radius: 0 0 35px 35px;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cheeks {
+    position: absolute;
+    width: 100%;
+    top: 105px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.cheek {
+    width: 20px;
+    height: 15px;
+    background: #ff9eb8;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.ghost-tail {
+    width: 200px;
+    height: 40px;
+    margin-top: -5px;
+}
+
+@keyframes wave-sway {
+
+    0%,
+    100% {
+        transform: translateY(0) scaleY(1);
+    }
+
+    50% {
+        transform: translateY(-3px) scaleY(1.05);
+    }
+}
+
+.star {
+    position: absolute;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.star-1 {
+    top: 450px;
+    left: 250px;
+    animation-delay: 0s;
+}
+
+.star-2 {
+    top: 150px;
+    left: 100px;
+    font-size: 20px;
+    animation-delay: 0.5s;
+}
+
+.star-3 {
+    top: 410px;
+    right: 300px;
+    animation-delay: 1s;
+}
+
+.star-4 {
+    top: 150px;
+    right: 100px;
+    font-size: 25px;
+    animation-delay: 1.5s;
+}
+
+.star-5 {
+    bottom: 100px;
+    left: 200px;
+    font-size: 22px;
+    animation-delay: 0.8s;
+}
+
+.star-6 {
+    bottom: 250px;
+    right: 250px;
+    font-size: 28px;
+    animation-delay: 1.2s;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+        /* Schwebt 20px nach oben */
+    }
+}
+
+@keyframes bubble-bounce {
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-5px) scale(1.02);
+        /* Kleiner Hüpfer */
+    }
+}
+
+@keyframes blink {
+    0%,
+    48%,
+    52%,
+    100% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes wave-left-arm {
+    0%,
+    100% {
+        transform: rotate(-35deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+    }
+}
+
+@keyframes wave-right-arm {
+    0%,
+    100% {
+        transform: rotate(35deg);
+    }
+
+    50% {
+        transform: rotate(45deg);
+    }
+
+}
